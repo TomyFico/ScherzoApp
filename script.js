@@ -1,0 +1,20 @@
+document.getElementById('startButton').addEventListener('click', function() {
+    // Mostra un messaggio di caricamento per rendere tutto più credibile
+    const container = document.querySelector('.container');
+    container.innerHTML = '<p>Caricamento in corso...</p>';
+    
+    // Simula un'attesa di qualche secondo prima di attivare lo scherzo
+    setTimeout(() => {
+        // Nasconde il contenuto originale
+        container.style.display = 'none';
+        
+        // Mostra la schermata di spavento
+        const scare = document.getElementById('scare');
+        scare.classList.remove('hidden');
+        scare.querySelector('#scareText').textContent = 'BOO!';
+        
+        // Riproduce il suono di urlo
+        const screamSound = document.getElementById('screamSound');
+        screamSound.play();
+    }, 5000); // 5 secondi di attesa prima dello scherzo
+});
